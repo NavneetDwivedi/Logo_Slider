@@ -1,0 +1,53 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@keyframes slides {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.logos {
+    overflow: hidden;
+    padding: 45px 0;
+    white-space: nowrap;
+    position: relative;
+}
+
+.logos:before, .logos:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: '';
+    z-index: 2;
+}
+
+.logos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255,255,255,0), white);
+}
+.logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255,255,255,0), white);
+}
+
+.logos:hover .logo_items {
+    animation-play-state: paused;
+}
+
+.logo_items{
+    display: inline-block;
+    animation: 35s slides infinite linear;
+}
+
+.logo_items img {
+    height: 100px;
+    margin: 0 30px;
+}
